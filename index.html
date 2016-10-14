@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>放大镜效果</title>
+	<style type="text/css">
+		#div1{
+			width:340px;
+			height: 310px;
+			padding: 5px;
+			border: 1px solid #ccc;
+			position: relative;
+		}
+
+		#div1 .small_pic{
+			width: 340px;
+			height: 310px;
+			position: relative;
+		}
+
+		#div1 .float_layer{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;
+			background: #fff;
+			opacity: 0.3;
+			filter: alpha(opacity:30);
+			position: absolute;
+			left: 0;
+			top: 0;
+			display: none;
+		}
+
+		#div1 .mark{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			z-index: 2;
+			left: 0;
+			top: 0;
+			background: red;
+			opacity: 0;
+			filter:alpha(opacity:0);
+			cursor:move;
+		}
+
+		#div1 .big_pic{
+			width: 200px;
+			height: 180px;
+			position: absolute;
+			left: 360px;
+			top: 0;
+			overflow: hidden;
+			border: 2px solid #000;
+			display: none;
+		}
+
+		#div1 .big_pic img{
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	</style>
+	<script type="text/javascript" src="../js/plugIn.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+	<div id="div1">
+		<div class="small_pic">
+			<span class="mark"></span>
+			<span class="float_layer"></span>
+			<img src="images/small.jpg" alt="小图片">
+		</div>
+		<div class="big_pic">
+			<img src="images/big.jpg" alt="大图片">
+		</div>
+	</div>
+</body>
+</html>
